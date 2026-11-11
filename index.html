@@ -1,28 +1,422 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Work in progress</title>
-  <meta name="robots" content="noindex">
-  <style>
-    :root { --bg: #f2f1ee; --fg: #23211f; --muted: #6f6a64; }
-    @media (prefers-color-scheme: dark) { :root { --bg: #1b1a19; --fg: #ecebe8; --muted: #9a958e; } }
-    html, body { height: 100%; margin: 0; }
-    body {
-      background: var(--bg); color: var(--fg);
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      display: grid; place-items: center; padding: 24px; box-sizing: border-box;
-    }
-    main { max-width: 32rem; }
-    h1 { font-size: clamp(2rem, 6vw, 3rem); line-height: 1.05; margin: 0 0 0.75rem; }
-    p { margin: 0; color: var(--muted); font-size: 1.0625rem; line-height: 1.5; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flick</title>
+<meta name="description" content="A cigarette pack that gives instructions instead of warnings. Toss it when a craving hits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <h1>Work in progress</h1>
-    <p>This project is being rebuilt. Check back soon.</p>
-  </main>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">Flick</a>
+    <div class="nav-links">
+      <a href="#words">Words</a>
+      <a href="#problem">Problem</a>
+      <a href="#flick">Flick</a>
+      <a href="#app">App</a>
+      <a href="#community">Community</a>
+      <a href="#try">Try it</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap hero" id="top">
+  <div class="hero-text">
+    <h1>Flick</h1>
+    <p class="lede">A cigarette pack that gives instructions instead of warnings. Toss it when a craving hits. Do what lands face up.</p>
+    <p class="by">Harshwardhan Harne<br>M.Des New Media Design, NID Ahmedabad<br>Cohesity design assessment, 2026</p>
+  </div>
+  <div class="stage">
+    <div class="scene"><div class="tilt"><div class="pack" id="pack-hero"></div></div></div>
+    <button class="btn" id="toss-hero" type="button">Toss the pack</button>
+    <p class="out" id="out-hero" aria-live="polite">Six faces. Six instructions.</p>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap" id="words">
+  <div class="head">
+    <h2>Three words</h2>
+    <p>Toss, withdrawal, instructive. Withdrawal took me to smoking. I mapped what each word touches, then looked for where they meet.</p>
+  </div>
+  <div class="panel scroll-x"><svg id="map" viewBox="0 0 1200 560" role="img" aria-label="Map of the three words, the words around them, and where they meet"></svg></div>
+  <p class="cap">Red words are the ones I kept. Black pills are where two words meet. They all lead to one place.</p>
+
+  <div class="three">
+    <article class="card">
+      <h3>Toss <span>verb</span></h3>
+      <p class="means">A way to decide.</p>
+      <p><b>Kept</b> Chance. The flick. Passing something to a friend.</p>
+      <p class="out-line"><b>Left out</b> Throwing the pack away on quit day. Quitting takes many tries.</p>
+    </article>
+    <article class="card">
+      <h3>Withdrawal <span>noun</span></h3>
+      <p class="means">The first four weeks.</p>
+      <p><b>Kept</b> Cravings. Restless hands. Losing the smoke-break circle.</p>
+      <p class="out-line"><b>Left out</b> Money saved. Every quit app already counts it.</p>
+    </article>
+    <article class="card">
+      <h3>Instructive <span>adjective</span></h3>
+      <p class="means">Something to do.</p>
+      <p><b>Kept</b> An action for right now. A pattern over the weeks.</p>
+      <p class="out-line"><b>Left out</b> Teaching. People already know.</p>
+    </article>
+  </div>
+</section>
+
+<section class="wrap" id="problem">
+  <div class="head">
+    <h2>The nicotine leaves. The script stays.</h2>
+    <p>Within days the nicotine is out of the body. The hand still goes to the pocket after chai.</p>
+  </div>
+
+  <div class="split">
+    <div class="panel red-panel">
+      <p class="small-h">A cigarette, as a script</p>
+      <div class="pills"><span>reach</span><span>tap</span><span>light</span><span>inhale</span><span>exhale</span><span>flick</span></div>
+      <p class="big-line">Run thousands of times. Now it runs itself.</p>
+    </div>
+    <div class="panel">
+      <svg viewBox="0 0 520 250" role="img" aria-label="A craving rises, peaks and passes within a few minutes" class="wave">
+        <path d="M30 196 C150 196 190 52 260 52 S370 196 490 196 Z" fill="#fbdcd7"/>
+        <path d="M30 196 C150 196 190 52 260 52 S370 196 490 196" fill="none" stroke="#e8412c" stroke-width="3" stroke-linecap="round"/>
+        <line x1="30" y1="196" x2="490" y2="196" stroke="#131313" stroke-width="1.5"/>
+        <circle cx="260" cy="52" r="6" fill="#e8412c"/>
+        <text x="260" y="32" text-anchor="middle" class="w-b">"just one"</text>
+        <text x="30" y="222" class="w-s">urge starts</text>
+        <text x="490" y="222" text-anchor="end" class="w-s">it passes</text>
+        <text x="260" y="222" text-anchor="middle" class="w-s">a few minutes</text>
+      </svg>
+      <p class="cap in">A craving rises and passes on its own. The danger is the peak.</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><b>92.4%</b><span>of adults in India know smoking causes serious illness</span></div>
+    <div><b>85%</b><span>of every pack is already a warning</span></div>
+    <div><b>10.7%</b><span>still smoke</span></div>
+  </div>
+  <p class="cap">GATS-2 India, 2016–17. Pack warning rule, 2016.</p>
+
+  <p class="statement">People know. The gap is the few minutes when the craving does the deciding.</p>
+
+  <div class="read">
+    <div class="read-row read-h"><span>What I read</span><span>What I took from it</span></div>
+    <div class="read-row"><span>Smoke with the nicotine removed still eases a craving. <i>Rose, 2000</i></span><span>Design for the hands and the breath.</span></div>
+    <div class="read-row"><span>Slow breathing cuts craving. People stop doing it within a day. <i>McClernon, 2004. Shahab, 2013</i></span><span>The technique needs a carrier.</span></div>
+    <div class="read-row"><span>With a plan made in advance, 10.7% quit. Without one, 4.9%. <i>McWilliams, 2019</i></span><span>Write the instruction on a calm day.</span></div>
+    <div class="read-row"><span>A substitute ritual can keep the habit going. <i>Donny, 2007</i></span><span>Build it to fade.</span></div>
+  </div>
+</section>
+
+<section class="hmw" id="hmw">
+  <div class="wrap">
+    <p class="hmw-q">How might we help someone in the first weeks of quitting get through the few minutes of a craving, when they know what to do and can't decide to do it?</p>
+    <div class="whatif">
+      <p>What if the pack told you what to do, instead of what you already know?</p>
+      <p>What if a toss chose, so the craving couldn't?</p>
+      <p>What if someone who quit before you tossed you one?</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="flick">
+  <div class="head">
+    <h2>Flick</h2>
+    <p>A pack with six faces and six instructions. You write them on a calm day. A toss picks one on a bad minute.</p>
+  </div>
+
+  <div class="scripts panel">
+    <div class="script-row"><span class="lab">Old</span><div class="pills ink-pills"><span>reach</span><span>tap</span><span>light</span><span>inhale</span><span>exhale</span><span>flick</span></div></div>
+    <div class="script-row"><span class="lab">New</span><div class="pills blue-pills"><span class="same">reach</span><span>toss</span><span>read</span><span>do</span></div></div>
+    <p class="cap in">The first move stays. The hand still finds a pack.</p>
+  </div>
+
+  <ol class="steps">
+    <li>
+      <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="42" y="12" width="36" height="64" rx="5" fill="#e8412c"/><path d="M50 34h20M50 45h20M50 56h12" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></svg>
+      <h3>Load</h3><p>Quit day. Put an instruction on each face. Write your own or borrow one.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 120 90" aria-hidden="true"><path d="M18 78 Q60 -18 102 78" fill="none" stroke="#91918d" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/><rect x="45" y="8" width="30" height="50" rx="5" fill="#e8412c" transform="rotate(28 60 33)"/></svg>
+      <h3>Toss</h3><p>Craving hits. Toss the pack. Chance picks which, never whether.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="20" y="32" width="80" height="38" rx="5" fill="#e8412c"/><text x="60" y="57" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Geist, Arial, sans-serif">Breathe</text></svg>
+      <h3>Do</h3><p>Do what's face up. It takes about as long as the craving.</p>
+    </li>
+    <li>
+      <svg viewBox="0 0 120 90" aria-hidden="true"><rect x="42" y="12" width="36" height="64" rx="5" fill="none" stroke="#91918d" stroke-width="2" stroke-dasharray="4 6"/></svg>
+      <h3>Retire</h3><p>Weeks pass. Faces go blank. A blank face means your call.</p>
+    </li>
+  </ol>
+
+  <div class="split net-split">
+    <div class="panel scroll-x">
+      <div class="net" role="img" aria-label="The pack unfolded, with an instruction on each face">
+        <div class="nf blue n-top"><b>Call</b><i>3%</i></div>
+        <div class="nf white n-left"><b>Water</b><i>12%</i></div>
+        <div class="nf red n-front"><span>Flick</span><b>Breathe</b><em>In for four. Out for six. Five times.</em><i>35%</i></div>
+        <div class="nf white n-right"><b>Walk</b><i>12%</i></div>
+        <div class="nf red n-back"><span>Flick</span><b>Wait</b><em>Four minutes. Then decide.</em><i>35%</i></div>
+        <div class="nf blank n-bottom"><b>Your call</b><i>3%</i></div>
+      </div>
+    </div>
+    <div class="net-text">
+      <h3>A pack is an unfair die</h3>
+      <p>Big faces land often. Ends almost never.</p>
+      <p>So the everyday instructions sit on the big faces, and the hardest ask sits on an end.</p>
+      <p>One end is blank from day one. That face is always yours.</p>
+      <p class="cap in">Odds are estimates, not yet tested with a real pack.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="app">
+  <div class="head">
+    <h2>The app is for calm days</h2>
+    <p>Nobody should open a phone mid-craving. The pack handles the bad minute. The app handles before and after.</p>
+  </div>
+
+  <div class="flow">
+    <div class="flow-h"><h3>Quit day</h3><p>Load the pack.</p></div>
+    <div class="rail">
+      <figure class="shot">
+        <div class="ph red">
+          <div class="ph-bar"><span>9:41</span><span class="dots"></span></div>
+          <p class="ph-sub">Day 0</p>
+          <p class="ph-h">Load your pack</p>
+          <div class="ph-rows">
+            <div><span>Front</span><b>Breathe</b></div>
+            <div><span>Back</span><b>Wait</b></div>
+            <div><span>Side</span><b>Walk</b></div>
+            <div><span>Side</span><b>Water</b></div>
+            <div><span>End</span><b>Call</b></div>
+            <div class="dim"><span>End</span><b>Your call</b></div>
+          </div>
+          <div class="ph-btn">Seal the pack</div>
+        </div>
+        <figcaption><b>Load</b>Six faces. Tap one to change it.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph paper">
+          <div class="ph-bar"><span>9:41</span><span class="dots"></span></div>
+          <p class="ph-h">Write one</p>
+          <p class="ph-lab">For when</p>
+          <div class="chips"><span class="on">After chai</span><span>After meals</span><span>4 pm</span><span>Night</span></div>
+          <div class="ph-field"><b>Both hands</b><p>Hold the cup with both hands till it's empty.</p></div>
+          <p class="ph-lab">Goes on</p>
+          <div class="chips"><span>Front</span><span>Back</span><span class="on">Side</span><span>End</span></div>
+          <div class="ph-btn">Add to pack</div>
+        </div>
+        <figcaption><b>Write</b>Short. Doable in four minutes.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph blue">
+          <div class="ph-bar"><span>9:41</span><span class="dots"></span></div>
+          <p class="ph-h">Toss me one</p>
+          <p class="ph-sub">Left by people who quit.</p>
+          <div class="ph-card"><b>Count the stairs. All of them.</b><div><span>day 212</span><em>Take</em></div></div>
+          <div class="ph-card"><b>Peel an orange. Slowly.</b><div><span>day 40</span><em>Take</em></div></div>
+          <div class="ph-card"><b>Send someone a photo of the sky.</b><div><span>day 365</span><em>Take</em></div></div>
+          <div class="ph-yellow"><b>Leave one</b><span>Yours helps the next person.</span></div>
+        </div>
+        <figcaption><b>Borrow</b>Take one from the shelf.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="flow-h"><h3>Every evening</h3><p>One minute. No streaks.</p></div>
+    <div class="rail">
+      <figure class="shot">
+        <div class="ph ink">
+          <div class="ph-bar"><span>9:30</span><span class="dots"></span></div>
+          <p class="ph-sub">Day 3</p>
+          <p class="ph-h">Tonight</p>
+          <p class="ph-num"><b>3</b>tosses</p>
+          <div class="ph-rows">
+            <div><span>11:20</span><b>Breathe</b><em>passed</em></div>
+            <div><span>4:10</span><b>Wait</b><em>passed</em></div>
+            <div><span>9:05</span><b>Walk</b><em class="slip">smoked one</em></div>
+          </div>
+          <div class="ph-card"><b>A slip is information.</b><span>9 pm goes on your map.</span></div>
+          <div class="ph-btn">Save the day</div>
+        </div>
+        <figcaption><b>Log</b>What landed. Whether it passed.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph blue glow">
+          <div class="ph-bar"><span>9:30</span><span class="dots"></span></div>
+          <p class="ph-sub">Week 2</p>
+          <p class="ph-h">4 pm is your hour</p>
+          <div class="bars" aria-hidden="true"><i style="height:22%"></i><i style="height:38%"></i><i style="height:30%"></i><i style="height:52%"></i><i class="hot" style="height:100%"></i><i style="height:44%"></i><i style="height:26%"></i><i style="height:60%"></i></div>
+          <div class="bar-ax"><span>10 am</span><span>4 pm</span><span>10 pm</span></div>
+          <div class="ph-rows">
+            <div><span>Breathe</span><b>9 of 11</b></div>
+            <div><span>Wait</span><b>6 of 8</b></div>
+            <div><span>Walk</span><b>2 of 5</b></div>
+          </div>
+        </div>
+        <figcaption><b>Pattern</b>Your cravings, read back to you.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="flow-h"><h3>As weeks pass</h3><p>The pack empties itself.</p></div>
+    <div class="rail">
+      <figure class="shot">
+        <div class="ph red">
+          <div class="ph-bar"><span>8:15</span><span class="dots"></span></div>
+          <p class="ph-sub">Day 8</p>
+          <p class="ph-h">Retire a face</p>
+          <p class="ph-sub">Nine cravings a day is down to three.</p>
+          <div class="ph-rows pick">
+            <div class="sel"><span>Side</span><b>Water</b></div>
+            <div><span>Side</span><b>Walk</b></div>
+            <div><span>End</span><b>Call</b></div>
+          </div>
+          <div class="ph-card"><b>Blank means your call.</b><span>The pack stops deciding. You start.</span></div>
+          <div class="ph-btn">Retire Water</div>
+        </div>
+        <figcaption><b>Retire</b>You choose which goes blank.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph yellow">
+          <div class="ph-bar"><span>3:52</span><span class="dots"></span></div>
+          <p class="ph-h">Chai at 4?</p>
+          <p class="ph-sub">Your circle knows you quit.</p>
+          <div class="faces"><span>A</span><span>M</span><span>S</span><em>3 going</em></div>
+          <div class="ph-card"><span>Ankit tossed you one</span><b>Walk to the gate with me first.</b></div>
+          <div class="ph-btn">I'm in</div>
+        </div>
+        <figcaption><b>Circle</b>The break stays. The cigarette goes.</figcaption>
+      </figure>
+      <figure class="shot">
+        <div class="ph ink">
+          <div class="ph-bar"><span>9:30</span><span class="dots"></span></div>
+          <p class="ph-sub">What you did instead</p>
+          <p class="ph-h">28 days</p>
+          <div class="ph-rows">
+            <div><span>Breathe</span><b>31</b></div>
+            <div><span>Wait</span><b>22</b></div>
+            <div><span>Walk</span><b>9</b></div>
+            <div><span>Water</span><b>6</b></div>
+            <div><span>Call</span><b>2</b></div>
+            <div><span>Your call</span><b>14</b></div>
+          </div>
+          <div class="ph-btn red-btn">Pass your pack on</div>
+        </div>
+        <figcaption><b>The book</b>Four weeks, kept. Then handed over.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="community">
+  <div class="head">
+    <h2>Toss me one</h2>
+    <p>Smokers share. A light, a cigarette, a break. Flick keeps the sharing and changes what gets passed.</p>
+  </div>
+  <div class="loop">
+    <div class="loop-card ink-card"><span>Day 28</span><b>Passes the pack on</b><p>Their six instructions go on the shelf.</p></div>
+    <svg class="arrow" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" fill="none" stroke="#131313" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="loop-card blue-card"><span>The shelf</span><b>Instructions from people who quit</b><p>Each one carries the day it was left on.</p></div>
+    <svg class="arrow" viewBox="0 0 60 24" aria-hidden="true"><path d="M2 12h52M44 3l10 9-10 9" fill="none" stroke="#131313" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="loop-card red-card"><span>Day 0</span><b>Borrows one</b><p>A stranger's instruction lands on their pack.</p></div>
+  </div>
+  <div class="three">
+    <article class="card"><h3>The shelf</h3><p>You never get advice. You get one line from someone who's been there.</p></article>
+    <article class="card"><h3>The circle</h3><p>Quitting shouldn't cost you the chai break. Your circle can toss you an instruction when you step out together.</p></article>
+    <article class="card"><h3>Pass it on</h3><p>The last thing you do with Flick is give it away.</p></article>
+  </div>
+</section>
+
+<section class="wrap" id="day3">
+  <div class="head">
+    <h2>Day 3, 4:10 pm</h2>
+    <p>Rohan, 27. Backend engineer in Bengaluru. Eight a day for six years. He quit on Saturday.</p>
+  </div>
+  <ol class="story">
+    <li><time>4:10</time><p>Standup ends. Ankit says "chai?" Rohan's hand goes to his pocket. The pack is there.</p></li>
+    <li><time>4:12</time><p>At the tapri he tosses it on the bench. Front face. <b>Breathe.</b></p></li>
+    <li><time>4:13</time><p>In for four, out for six. Five times. The others smoke.</p></li>
+    <li><time>4:16</time><p>The urge is smaller. He holds the chai with both hands.</p></li>
+    <li><time>9:30</time><p>He logs three tosses and one slip. The slip goes on the map.</p></li>
+  </ol>
+</section>
+
+<section class="wrap" id="try">
+  <div class="head">
+    <h2>Try it</h2>
+    <p>Toss the pack. Move the day to watch faces retire.</p>
+  </div>
+  <div class="proto">
+    <div class="stage">
+      <div class="scene"><div class="tilt"><div class="pack" id="pack-proto"></div></div></div>
+      <button class="btn" id="toss-proto" type="button">Toss the pack</button>
+      <p class="out" id="out-proto" aria-live="polite">Nothing tossed yet.</p>
+    </div>
+    <div class="proto-side">
+      <div class="slider">
+        <label for="day">Day <output id="day-out" for="day">3</output> of 28</label>
+        <input id="day" type="range" min="1" max="28" step="1" value="3">
+        <p id="day-note">Week 1. All five instructions are on.</p>
+      </div>
+      <div class="ph ink" id="proto-phone">
+        <div class="ph-bar"><span id="p-time">9:41</span><span class="dots"></span></div>
+        <p class="ph-sub">Day <span id="p-day">3</span></p>
+        <p class="ph-h">Today</p>
+        <p class="ph-num"><b id="p-count">0</b>tosses</p>
+        <div class="ph-rows" id="p-log"><div class="dim"><span>Your tosses show up here.</span></div></div>
+        <div class="ph-card"><b id="p-left">5 instructions on</b><span>1 face is always yours.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="decisions">
+  <div class="head">
+    <h2>What I decided</h2>
+    <p>Each one cost me another idea.</p>
+  </div>
+  <div class="dec">
+    <div><b>The toss picks which, never whether.</b><span>Dropped a coin that decides if you smoke. Half the time it says yes.</span></div>
+    <div><b>The object is the pack.</b><span>Dropped a die and an app button. The hand already goes to the pack.</span></div>
+    <div><b>Instructions, not warnings.</b><span>Dropped more information. People have read the pack.</span></div>
+    <div><b>Written on a calm day.</b><span>Dropped commands from an app. An irritable person resists orders.</span></div>
+    <div><b>Pack for bad minutes, app for calm days.</b><span>Dropped anything that needs a phone mid-craving.</span></div>
+    <div><b>Faces retire.</b><span>Dropped a tool you keep forever. It would become the new habit.</span></div>
+  </div>
+
+  <div class="fail">
+    <h3>Where it could fail</h3>
+    <ul>
+      <li><b>A timer might do the same job.</b> Test the pack against a four-minute timer.</li>
+      <li><b>The toss could become the ritual.</b> If someone still tosses daily in week six, it failed.</li>
+      <li><b>Words leave people out.</b> Most smokers in India smoke bidis. Picture faces come next.</li>
+      <li><b>It doesn't touch nicotine.</b> Flick sits beside patches and gum.</li>
+    </ul>
+  </div>
+
+  <p class="refs">Rose JE et al. 2000, Pharmacol Biochem Behav. McClernon FJ et al. 2004, Addict Behav. Shahab L et al. 2013, Psychopharmacology. McWilliams L et al. 2019, Health Psychol. Donny EC et al. 2007, Addiction. Hughes JR 2007, Nicotine Tob Res. Ministry of Health and Family Welfare, GATS-2 India 2016–17.</p>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>Flick, by Harshwardhan Harne</span>
+  <span>A work in progress</span>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
